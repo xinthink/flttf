@@ -42,9 +42,8 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.flttf"
-        minSdkVersion 16
+        applicationId "com.xinthink.flttf"
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -71,37 +70,37 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
 
-afterEvaluate {
-    android.applicationVariants.all { def variant ->
-        // Create variant and target names
-        def targetName = variant.name.capitalize()
-        def targetPath = variant.dirName
+// afterEvaluate {
+//     android.applicationVariants.all { def variant ->
+//         // Create variant and target names
+//         def targetName = variant.name.capitalize()
+//         def targetPath = variant.dirName
 
-        // models path for the variant
-        def modelsDir = file("$buildDir/generated/assets/models/${targetPath}")
-        def modelsSrc = rootProject.file('../models')
+//         // models path for the variant
+//         def modelsDir = file("$buildDir/generated/assets/models/${targetPath}")
+//         def modelsSrc = rootProject.file('../models')
 
-        def bundleModelsTask = tasks.create(
-            name: "bundle${targetName}TensorFlowModels",
-            type: Copy
-        ) {
-            group = "tensorflow"
-            description = "bundle TensorFlow Lite models for $targetName."
+//         def bundleModelsTask = tasks.create(
+//             name: "bundle${targetName}TensorFlowModels",
+//             type: Copy
+//         ) {
+//             group = "tensorflow"
+//             description = "bundle TensorFlow Lite models for $targetName."
 
-            doFirst {
-                delete modelsDir
-                modelsDir.mkdirs()
-            }
+//             doFirst {
+//                 delete modelsDir
+//                 modelsDir.mkdirs()
+//             }
 
-            // Set up inputs and outputs so gradle can cache the result
-            inputs.files fileTree(dir: modelsSrc, includes: ['*.tflite'])
-            outputs.dir(modelsDir)
+//             // Set up inputs and outputs so gradle can cache the result
+//             inputs.files fileTree(dir: modelsSrc, includes: ['*.tflite'])
+//             outputs.dir(modelsDir)
 
-            from modelsSrc
-            include '*.tflite'
-            into modelsDir
-        }
+//             from modelsSrc
+//             include '*.tflite'
+//             into modelsDir
+//         }
 
-        tasks.findByPath("generate${targetName}Assets")?.dependsOn bundleModelsTask
-    }
-}
+//         tasks.findByPath("generate${targetName}Assets")?.dependsOn bundleModelsTask
+//     }
+// }

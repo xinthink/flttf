@@ -1,4 +1,4 @@
-package com.example.flttf
+package com.xinthink.flttf
 
 import android.os.Bundle
 import io.flutter.app.FlutterActivity
