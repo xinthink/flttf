@@ -10,8 +10,6 @@ pycodestyle = "*"
 
 [packages]
 tensorflow = "*"
-matplotlib = "*"
-pandas = "*"
 
 [requires]
 python_version = "3.7"
