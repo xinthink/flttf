@@ -1,9 +1,11 @@
 import tensorflow as tf
 from tensorflow import keras
+import matplotlib.pyplot as plt
 
 mnist = keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
-print("mnist dataset, train=%s, test=%s" % (x_train.shape, x_test.shape))
+print("mnist dataset: train=%s test=%s" % (x_train.shape, x_test.shape))
+# print("x_test[0] =", x_test[0])
 
 x_train, x_test = x_train / 255.0, x_test / 255.0  # normalizing
 model = keras.models.Sequential([
