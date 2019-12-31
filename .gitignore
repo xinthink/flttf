@@ -9,6 +9,11 @@
 .history
 .svn/
 
+# exclude local path (python.pythonPath)
+.*.py
+*.pyc
+.ipynb_checkpoints
+
 # IntelliJ related
 *.iml
 *.ipr
