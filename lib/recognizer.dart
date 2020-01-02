@@ -7,8 +7,8 @@ import 'package:tflite/tflite.dart';
 
 class Recognizer {
   Future loadModel() => Tflite.loadModel(
-    model: "models/digits_mnist.tflite",
-    labels: "models/labels.txt",
+    model: "models/mnist/mnist.tflite",
+    labels: "models/mnist/labels.txt",
   ).catchError((e, s) => debugPrint("loading model failure: $e $s"));
 
   Future recognize(List<Offset> points) async {
