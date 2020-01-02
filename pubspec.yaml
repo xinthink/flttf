@@ -51,6 +51,8 @@ flutter:
   assets:
     - models/mnist/mnist.tflite
     - models/mnist/labels.txt
+    - models/yolo-tiny/yolov2-tiny.tflite
+    - models/yolo-tiny/labels.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
