@@ -31,7 +31,7 @@ Use the pre-trained [Tiny YOLO v2] model.
 
 ### Convert the saved model file
 
-Prepare a [virutalenv] with TensorFlow 1.x installed, using [Pipenv] for example:
+Prepare a [virtualenv] with TensorFlow 1.x installed, using [Pipenv] for example:
 
 ```
 pipenv --python `which python3` install tensorflow==1.15 opencv-python keras cython
@@ -85,7 +85,7 @@ Use a [Keras implementation](https://github.com:qqwweee/keras-yolo3)
 # download tiny yolo v3 model
 curl https://pjreddie.com/media/files/yolov3-tiny.weights -o yolov3-tiny.weights
 curl https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3-tiny.cfg -o yolov3-tiny.cfg
-curl https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names -o label.txt
+curl https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names -o labels.txt
 
 # clone keras-yolo3
 git clone git@github.com:qqwweee/keras-yolo3.git
