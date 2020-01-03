@@ -42,7 +42,7 @@ class Recognizer {
       final r = imgBytes.getUint8(i);
       final g = imgBytes.getUint8(i + 1);
       final b = imgBytes.getUint8(i + 2);
-      final a = imgBytes.getUint8(i + 3);
+      // final a = imgBytes.getUint8(i + 3);
       // debugPrint("pixel[$i] argb=${a},${r},${g},${b} ${(r + g + b) / 3.0 / 255.0}");
       buffer[index++] = (r + g + b) / 3.0 / 255.0;
 
