@@ -1,3 +1,4 @@
+import 'package:collection_ext/iterables.dart';
 import 'package:flttf/constants.dart';
 import 'package:flttf/drawing_painter.dart';
 import 'package:flttf/recognizer.dart';
@@ -104,7 +105,7 @@ class _RecognizerScreenState extends State<RecognizerScreen> {
   );
 
   Widget _buildDigitsPane() => Row(
-    children: List.generate(10, (i) => _buildDigitContainer(i, _findPredict(i))).toList(),
+    children: List.generate(10, (i) => _buildDigitContainer(i, _findPredict(i))).asList(),
   );
 
   Widget _buildDigitContainer(int index, dynamic predict) => Expanded(
